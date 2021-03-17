@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account avatar upload avatar 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      222,
+    ],
+    "sql": "select \\"id\\", \\"version\\", \\"created_at\\", \\"created_by\\", \\"updated_at\\", \\"updated_by\\", \\"removed_at\\", \\"removed_by\\", \\"email\\", \\"password\\", \\"active\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"roles\\" from \\"account\\" where \\"id\\" = $1",
+  },
+  Object {
+    "bindings": Array [
+      1,
+      "today or yesterday who knows",
+      222,
+      222,
+    ],
+    "sql": "update \\"account\\" set \\"version\\" = $1, \\"updated_at\\" = $2, \\"updated_by\\" = $3 where \\"id\\" = $4 returning \\"id\\"",
+  },
+]
+`;

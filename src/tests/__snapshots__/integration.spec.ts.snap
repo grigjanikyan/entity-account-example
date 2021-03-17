@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account confirmActivationOtp 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      4356,
+    ],
+    "sql": "select count(\\"id\\") from \\"account\\" where \\"id\\" in ($1)",
+  },
+  Object {
+    "bindings": Array [
+      1,
+      "somme3etime",
+      4356,
+      4356,
+    ],
+    "sql": "update \\"account\\" set \\"version\\" = $1, \\"updated_at\\" = $2, \\"updated_by\\" = $3 where \\"id\\" = $4 returning \\"id\\"",
+  },
+]
+`;
+
+exports[`Account confirmActivationOtp 2`] = `
+Array [
+  Object {
+    "args": Object {
+      "key": "account-activation-otp-4356",
+    },
+    "method": "get",
+  },
+  Object {
+    "args": Object {
+      "key": "account-activation-otp-4356",
+    },
+    "method": "del",
+  },
+]
+`;
+
+exports[`Account confirmEmailByToken 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      876,
+      false,
+    ],
+    "sql": "select \\"id\\", \\"version\\", \\"created_at\\", \\"created_by\\", \\"updated_at\\", \\"updated_by\\", \\"removed_at\\", \\"removed_by\\", \\"email\\", \\"password\\", \\"active\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"roles\\" from \\"account\\" where \\"id\\" = $1 and \\"email_confirmed\\" = $2",
+  },
+  Object {
+    "bindings": Array [
+      1,
+      "sommee4etime123",
+      3,
+      876,
+    ],
+    "sql": "update \\"account\\" set \\"version\\" = $1, \\"updated_at\\" = $2, \\"updated_by\\" = $3 where \\"id\\" = $4 returning \\"id\\"",
+  },
+]
+`;
+
+exports[`Account createActivationOtp 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      768,
+    ],
+    "sql": "select count(\\"id\\") from \\"account\\" where \\"id\\" in ($1)",
+  },
+  Object {
+    "bindings": Array [
+      768,
+    ],
+    "sql": "select \\"id\\", \\"version\\", \\"created_at\\", \\"created_by\\", \\"updated_at\\", \\"updated_by\\", \\"removed_at\\", \\"removed_by\\", \\"email\\", \\"password\\", \\"active\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"roles\\" from \\"account\\" where \\"id\\" = $1",
+  },
+  Object {
+    "bindings": Array [
+      768,
+    ],
+    "sql": "select \\"id\\", \\"email\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\" from \\"account\\" where \\"id\\" = $1",
+  },
+]
+`;
+
+exports[`Account createActivationOtp 2`] = `
+Array [
+  Object {
+    "args": Object {
+      "key": "account-activation-otp-768",
+    },
+    "method": "get",
+  },
+  Object {
+    "args": Object {
+      "key": "account-activation-otp-768",
+      "ttl": 60,
+      "val": "12345",
+    },
+    "method": "setex",
+  },
+]
+`;
+
+exports[`Account restorePasswordByToken 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      "emaila",
+      "passworda",
+    ],
+    "sql": "select \\"id\\", \\"version\\", \\"created_at\\", \\"created_by\\", \\"updated_at\\", \\"updated_by\\", \\"removed_at\\", \\"removed_by\\", \\"email\\", \\"password\\", \\"active\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"roles\\" from \\"account\\" where \\"email\\" = $1 and \\"password\\" = $2",
+  },
+  Object {
+    "bindings": Array [
+      1,
+      "sommee4etime",
+      3,
+      "8fe5b36117dc7c5a3862f86741665ac31171cf9380f866af84c68da2eb346ff3b5dcfbc76eea8f3fe5cbda96a6e4b022e5bd421e5cc529a8940aaecab0ea6f96",
+      4356,
+    ],
+    "sql": "update \\"account\\" set \\"version\\" = $1, \\"updated_at\\" = $2, \\"updated_by\\" = $3, \\"password\\" = $4 where \\"id\\" = $5 returning \\"id\\"",
+  },
+]
+`;
+
+exports[`Account sendNewPasswordEmail 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      "email@domahhhin.com",
+    ],
+    "sql": "select \\"id\\", \\"version\\", \\"created_at\\", \\"created_by\\", \\"updated_at\\", \\"updated_by\\", \\"removed_at\\", \\"removed_by\\", \\"email\\", \\"password\\", \\"active\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"roles\\" from \\"account\\" where \\"email\\" = $1",
+  },
+]
+`;
+
+exports[`Account signUp 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      "email@domain.com",
+    ],
+    "sql": "select count(\\"email\\") from \\"account\\" where \\"email\\" in ($1)",
+  },
+  Object {
+    "bindings": Array [
+      "+380971707070",
+    ],
+    "sql": "select count(\\"mobile_phone\\") from \\"account\\" where \\"mobile_phone\\" in ($1)",
+  },
+  Object {
+    "bindings": Array [
+      "somme2eetime",
+      3,
+      "email@domain.com",
+      "firstName",
+      "lastName",
+      "+380971707070",
+      "50e9c5e18dbebbd9f3f6ee44aaa6f4df6545fa445f6aede5e76a589498787a942b21e104b919d820114a012fb46b711e16d31334650c180b1b1b5fe907a16106",
+      null,
+      null,
+      0,
+    ],
+    "sql": "insert into \\"account\\" (\\"created_at\\", \\"created_by\\", \\"email\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"password\\", \\"removed_at\\", \\"removed_by\\", \\"version\\") values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning \\"id\\"",
+  },
+]
+`;
+
+exports[`Account update user email changed 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      356,
+    ],
+    "sql": "select \\"id\\", \\"version\\", \\"created_at\\", \\"created_by\\", \\"updated_at\\", \\"updated_by\\", \\"removed_at\\", \\"removed_by\\", \\"email\\", \\"password\\", \\"active\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"roles\\" from \\"account\\" where \\"id\\" = $1",
+  },
+  Object {
+    "bindings": Array [
+      1,
+      "sommee5etime",
+      356,
+      "email@dom2.com",
+      "firstNadfgme",
+      "lastdsfName",
+      "+380971705670",
+      356,
+    ],
+    "sql": "update \\"account\\" set \\"version\\" = $1, \\"updated_at\\" = $2, \\"updated_by\\" = $3, \\"email\\" = $4, \\"first_name\\" = $5, \\"last_name\\" = $6, \\"mobile_phone\\" = $7 where \\"id\\" = $8 returning \\"id\\"",
+  },
+]
+`;
+
+exports[`Account update user email same 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      356,
+    ],
+    "sql": "select \\"id\\", \\"version\\", \\"created_at\\", \\"created_by\\", \\"updated_at\\", \\"updated_by\\", \\"removed_at\\", \\"removed_by\\", \\"email\\", \\"password\\", \\"active\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"roles\\" from \\"account\\" where \\"id\\" = $1",
+  },
+  Object {
+    "bindings": Array [
+      1,
+      "sommeee6time",
+      356,
+      "email@dom1.com",
+      "firstNadfgme",
+      "lastdsfName",
+      "+380971705670",
+      356,
+    ],
+    "sql": "update \\"account\\" set \\"version\\" = $1, \\"updated_at\\" = $2, \\"updated_by\\" = $3, \\"email\\" = $4, \\"first_name\\" = $5, \\"last_name\\" = $6, \\"mobile_phone\\" = $7 where \\"id\\" = $8 returning \\"id\\"",
+  },
+]
+`;
+
+exports[`Account updatePassword 1`] = `
+Array [
+  Object {
+    "bindings": Array [
+      3,
+      "e6e8ba72bf2bab68c923599a08489c6f3a35018e870d490fa25b4c2a2d82361093b9a8f1d0cdd02e5a7dd5e714dc090263e2e90af3d3d861c056f28a4adb2d95",
+    ],
+    "sql": "select \\"id\\", \\"version\\", \\"created_at\\", \\"created_by\\", \\"updated_at\\", \\"updated_by\\", \\"removed_at\\", \\"removed_by\\", \\"email\\", \\"password\\", \\"active\\", \\"first_name\\", \\"last_name\\", \\"mobile_phone\\", \\"roles\\" from \\"account\\" where \\"id\\" = $1 and \\"password\\" = $2",
+  },
+  Object {
+    "bindings": Array [
+      1,
+      "sommee1etime",
+      3,
+      "73f4a33d231345c656d72cdcbeceaa7543ab9f1e06c87a07d1fc83d21f579c00183fb3cffec3604e328331250695901707e6459a6db42562ba86bb20247b0663",
+      3,
+    ],
+    "sql": "update \\"account\\" set \\"version\\" = $1, \\"updated_at\\" = $2, \\"updated_by\\" = $3, \\"password\\" = $4 where \\"id\\" = $5 returning \\"id\\"",
+  },
+]
+`;
